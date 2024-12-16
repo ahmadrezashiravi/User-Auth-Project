@@ -1,0 +1,4 @@
+2024-12-13 16:25:48.503 PST [22336] LOG:  redirecting log output to logging collector process
+2024-12-13 16:25:48.503 PST [22336] HINT:  Future log output will appear in directory "log".
+2024-12-13 16:27:27.010 PST [27960] LOG:  redirecting log output to logging collector process
+2024-12-13 16:27:27.010 PST [27960] HINT:  Future log output will appear in directory "log".
