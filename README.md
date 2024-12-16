@@ -1,4 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# User-auth-Project
+
+A full-stack user authentication system built with **Next.js**, **Prisma**, **PostgreSQL**, and **NextAuth.js**. The project allows users to register, log in (both via email/password and Google), and reset their passwords. It also includes email verification for password reset and token-based authentication.
+
+## Features
+
+- **Email/Password Authentication**: Users can register and log in with their email and password.
+- **Google Authentication**: Users can sign up and log in using their Google account.
+- **Password Reset**: Users can reset their password by receiving a reset link via email.
+- **JWT Tokens**: Authentication is handled via JSON Web Tokens (JWT) for session management.
+- **Prisma ORM**: Prisma is used to manage database interactions with PostgreSQL.
+
+## Technologies & Tools
+
+- **Next.js**: A React framework for building web applications with server-side rendering and static site generation.
+- **NextAuth.js**: Authentication for Next.js applications with various providers (Google, Email).
+- **Prisma**: ORM (Object-Relational Mapping) tool for database management.
+- **PostgreSQL**: Relational database used to store user data.
+- **Flowbite**: A UI kit for building web interfaces with Tailwind CSS.
+- **React Hook Form**: A form library for handling form submissions with ease.
+- **Toastify**: A library for displaying toast notifications.
+- **NodeMailer**: For sending password reset emails.
+
+## Setup & Installation
+
+Follow these steps to get your local copy of the project up and running.
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/User-auth-Project.git
 
 ## Getting Started
 
