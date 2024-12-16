@@ -65,7 +65,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-How It Works
+## How It Works
 1. User Registration & Login
 Users can register with their email and password, or they can log in using their Google account. When logging in with email/password, the system uses JWT tokens to manage sessions.
 
