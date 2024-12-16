@@ -25,10 +25,27 @@ A full-stack user authentication system built with **Next.js**, **Prisma**, **Po
 
 Follow these steps to get your local copy of the project up and running.
 
-### 1. Clone the repository
-
+### 1. Install dependencies
+    - ** Navigate to the project directory and run:
 ```bash
-git clone https://github.com/yourusername/User-auth-Project.git
+cd User-auth-Project
+npm install
+```
+
+3. Set up environment variables
+Create a .env.local file at the root of the project and configure the following environment variables:
+```bash
+DATABASE_URL="postgresql://user:password@localhost:5432/mydb?schema=public"
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your-secret-key
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+SENDGRID_API_KEY=your-sendgrid-api-key
+
+```
+Replace your-secret-key with a randomly generated secret key for JWT.
+Replace your-google-client-id and your-google-client-secret with credentials from your Google Developer Console.
+Replace your-sendgrid-api-key with your SendGrid API key for sending password reset emails.
 
 ## Getting Started
 
@@ -48,19 +65,28 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+How It Works
+1. User Registration & Login
+Users can register with their email and password, or they can log in using their Google account. When logging in with email/password, the system uses JWT tokens to manage sessions.
 
-## Learn More
+2. Password Reset
+If a user forgets their password, they can request a password reset link. The system generates a token and sends it to the user's email. Clicking the link allows the user to set a new password.
 
-To learn more about Next.js, take a look at the following resources:
+3. Google Authentication
+Google authentication is handled using NextAuth.js, which simplifies the integration of third-party authentication providers.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Prisma ORM
+Prisma is used to interact with the PostgreSQL database. The schema is defined in the /prisma/schema.prisma file, and migrations are handled with Prisma's CLI.
+Testing the Application
+You can run the tests (if any) using the following command:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run test
 
-## Deploy on Vercel
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contribution
+If you want to contribute to the project, feel free to fork the repository, make your changes, and submit a pull request.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
